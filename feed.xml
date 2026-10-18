@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>张必哲</title>
+    <title>张弼哲</title>
     <link>https://bizhezhang.github.io/</link>
-    <description>前端工程师张必哲的个人网站：项目、文章与简历。</description>
+    <description>前端工程师张弼哲的个人网站：项目、文章与简历。</description>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 18 Oct 2026 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://bizhezhang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
