@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>手写 CSS 的四个决定 · 张必哲</title>
+  <meta name="description" content="自定义属性、深色模式、打印样式，以及为什么这个站点一行 JS 都不写。">
+  <link rel="canonical" href="https://bizhezhang.github.io/blog/css-without-framework.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="张必哲">
+  <meta property="og:title" content="手写 CSS 的四个决定">
+  <meta property="og:description" content="自定义属性、深色模式、打印样式，以及为什么这个站点一行 JS 都不写。">
+  <meta property="og:url" content="https://bizhezhang.github.io/blog/css-without-framework.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E张%3C/text%3E%3C/svg%3E">
+  <link rel="alternate" type="application/rss+xml" title="张必哲" href="/feed.xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">张必哲</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="/projects/">项目</a>
+      <a href="/blog/" aria-current="page">文章</a>
+      <a href="/about/">关于</a>
+      <a href="/resume/">简历</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page article">
+
+  <h1>手写 CSS 的四个决定</h1>
+  <p class="meta">2026 年 10 月 17 日 · 约 4 分钟读完</p>
+
+  <p>不用框架写 CSS，很容易滑向两种结局：要么堆成一团无法维护的样式，要么过度设计出一套没人用的"设计系统"。这个站点选了中间路线，只做了四个决定。</p>
+
+  <h2>一、用自定义属性管理配色</h2>
+  <p>所有颜色都收进 <code>:root</code>，组件只引用变量。换主题时不用改任何组件样式。</p>
+  <pre><code>:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+}</code></pre>
+
+  <h2>二、深色模式跟着系统走</h2>
+  <p>不做一个切换按钮，直接用 <code>prefers-color-scheme</code> 覆盖变量。少一个按钮、少一段 JS、少一份本地存储，也少一个"用户忘了切换"的困惑。</p>
+  <pre><code>@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #e8e8e8;
+    --line: #262a33;
+  }
+}</code></pre>
+
+  <h2>三、打印样式是正式的输出格式</h2>
+  <p>简历总有人会打印或导出 PDF。默认打印会带上深色背景和链接下划线，所以单独写了 <code>@media print</code>：强制浅色、缩小字号、避免条目跨页断开。</p>
+  <pre><code>@media print {
+  .item { break-inside: avoid; }
+  a { color: #000; }
+  .site-header, .site-footer { display: none; }
+}</code></pre>
+
+  <h2>四、不写 JavaScript</h2>
+  <p>没有折叠菜单，没有滚动动画，没有"回到顶部"。代价是移动端的导航只能平铺成四个链接；收益是页面不会闪、不会因为脚本报错而白屏。</p>
+  <p>导航只有四项，平铺完全放得下。如果以后超过五项，再考虑用 <code>&lt;details&gt;</code> 做无脚本的折叠菜单。</p>
+
+  <h2>结果</h2>
+  <p>整个样式表大约 6 KB，覆盖了首页、列表、文章和打印四种场景。没有构建、没有压缩、没有 PostCSS——浏览器能直接读。</p>
+
+  <hr>
+  <p>相关：<a href="/blog/static-site-on-github-pages.html">用纯静态 HTML 在 GitHub Pages 上搭个人站</a></p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 张必哲</span>
+    <span>
+      <a href="mailto:2656559942@qq.com">邮箱</a> ·
+      <a href="https://github.com/bizhezhang">GitHub</a> ·
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

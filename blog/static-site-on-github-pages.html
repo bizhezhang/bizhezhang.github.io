@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用纯静态 HTML 在 GitHub Pages 上搭个人站 · 张必哲</title>
+  <meta name="description" content="不引入框架和构建流程，用几个 HTML 文件在 GitHub Pages 上跑通一个个人站点，附三个常见坑。">
+  <link rel="canonical" href="https://bizhezhang.github.io/blog/static-site-on-github-pages.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="张必哲">
+  <meta property="og:title" content="用纯静态 HTML 在 GitHub Pages 上搭个人站">
+  <meta property="og:description" content="不引入框架和构建流程，用几个 HTML 文件在 GitHub Pages 上跑通一个个人站点，附三个常见坑。">
+  <meta property="og:url" content="https://bizhezhang.github.io/blog/static-site-on-github-pages.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E张%3C/text%3E%3C/svg%3E">
+  <link rel="alternate" type="application/rss+xml" title="张必哲" href="/feed.xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">张必哲</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="/projects/">项目</a>
+      <a href="/blog/" aria-current="page">文章</a>
+      <a href="/about/">关于</a>
+      <a href="/resume/">简历</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page article">
+
+  <h1>用纯静态 HTML 在 GitHub Pages 上搭个人站</h1>
+  <p class="meta">2026 年 10 月 18 日 · 约 5 分钟读完</p>
+
+  <p>这个网站没有框架、没有构建步骤，也没有一行 JavaScript。所有的页面都是手写的 HTML，样式集中在一个 CSS 文件里。这并不是因为排斥工具，而是因为内容量小的时候，构建链路的维护成本高于它带来的收益。</p>
+
+  <h2>为什么不用框架</h2>
+  <ul>
+    <li>只有几个页面，不需要路由、组件和状态管理</li>
+    <li>没有依赖，就没有依赖升级、构建失败和安全公告</li>
+    <li>首屏只有一个 HTML 和一个 CSS 请求，没有等待编译产物水合的过程</li>
+  </ul>
+  <p>代价是每加一篇文章都要手写一个 HTML 文件。在文章数量少于 20 篇时，这个代价可以接受；超过之后就该换 Astro 或 Hugo 了。</p>
+
+  <h2>目录结构</h2>
+  <p>让 URL 好看的办法很简单：每个路径一个目录，里面放 <code>index.html</code>。</p>
+  <pre><code>.
+├── index.html          首页
+├── projects/
+│   ├── index.html      项目列表
+│   └── personal-site.html
+├── blog/
+│   ├── index.html      文章列表
+│   └── static-site-on-github-pages.html
+├── about/
+│   └── index.html
+├── resume/
+│   └── index.html
+├── 404.html
+├── feed.xml
+├── sitemap.xml
+└── style.css</code></pre>
+
+  <h2>发布</h2>
+  <p>仓库命名成 <code>用户名.github.io</code>，然后在仓库的 Settings → Pages 里选择 <code>main</code> 分支的根目录即可。之后每次 <code>git push</code> 都会自动重新发布，通常一分钟内生效。</p>
+
+  <h2>三个坑</h2>
+  <h3>1. 子路径与绝对路径</h3>
+  <p>用户站点发布在域名根目录，用 <code>/style.css</code> 没问题。但如果以后放到项目站点（<code>/仓库名/</code>）下，绝对路径就会指向错误的位置，要么改成相对路径，要么配置 <code>base</code>。</p>
+
+  <h3>2. Jekyll 会处理你的文件</h3>
+  <p>GitHub Pages 默认用 Jekyll 构建，以下划线开头的文件和目录会被忽略。在根目录放一个空的 <code>.nojekyll</code> 就能关掉它，避免出现"文件明明推上去了却 404"。</p>
+
+  <h3>3. 缓存</h3>
+  <p>发布后页面可能还有几分钟的缓存。调试时加上查询参数（如 <code>?v=2</code>）可以绕过，但不要在生产环境长期这么做。</p>
+
+  <h2>什么时候该换框架</h2>
+  <p>出现下面任意一条，就值得迁移到静态站点生成器：文章超过 20 篇、需要标签和分页、需要多人协作写稿。迁移成本并不高，因为内容和样式都能直接搬过去。</p>
+
+  <hr>
+  <p>相关：<a href="/projects/personal-site.html">这个网站的项目复盘</a></p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 张必哲</span>
+    <span>
+      <a href="mailto:2656559942@qq.com">邮箱</a> ·
+      <a href="https://github.com/bizhezhang">GitHub</a> ·
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

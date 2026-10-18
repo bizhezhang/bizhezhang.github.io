@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>张必哲</title>
+    <link>https://bizhezhang.github.io/</link>
+    <description>前端工程师张必哲的个人网站：项目、文章与简历。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 18 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <atom:link href="https://bizhezhang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>用纯静态 HTML 在 GitHub Pages 上搭个人站</title>
+      <link>https://bizhezhang.github.io/blog/static-site-on-github-pages.html</link>
+      <guid isPermaLink="true">https://bizhezhang.github.io/blog/static-site-on-github-pages.html</guid>
+      <pubDate>Sun, 18 Oct 2026 10:00:00 +0800</pubDate>
+      <description>不引入框架和构建流程，用几个 HTML 文件在 GitHub Pages 上跑通一个个人站点，附三个常见坑。</description>
+    </item>
+    <item>
+      <title>手写 CSS 的四个决定</title>
+      <link>https://bizhezhang.github.io/blog/css-without-framework.html</link>
+      <guid isPermaLink="true">https://bizhezhang.github.io/blog/css-without-framework.html</guid>
+      <pubDate>Fri, 17 Oct 2026 20:00:00 +0800</pubDate>
+      <description>自定义属性、深色模式、打印样式，以及为什么这个站点一行 JS 都不写。</description>
+    </item>
+  </channel>
+</rss>

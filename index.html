@@ -3,130 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>张必哲 · 简历</title>
-  <meta name="description" content="张必哲的个人简历：个人简介、技能、工作与项目经历、联系方式。">
+  <title>张必哲 · 前端工程师</title>
+  <meta name="description" content="张必哲的个人网站：项目、文章与简历。">
+  <link rel="canonical" href="https://bizhezhang.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="张必哲">
+  <meta property="og:title" content="张必哲 · 前端工程师">
+  <meta property="og:description" content="张必哲的个人网站：项目、文章与简历。">
+  <meta property="og:url" content="https://bizhezhang.github.io/">
+  <meta name="twitter:card" content="summary">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E张%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css">
+  <link rel="alternate" type="application/rss+xml" title="张必哲" href="/feed.xml">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "张必哲",
+    "url": "https://bizhezhang.github.io/",
+    "jobTitle": "前端工程师",
+    "email": "mailto:2656559942@qq.com",
+    "sameAs": ["https://github.com/bizhezhang"]
+  }
+  </script>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">张必哲</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="/projects/">项目</a>
+      <a href="/blog/">文章</a>
+      <a href="/about/">关于</a>
+      <a href="/resume/">简历</a>
+    </nav>
+  </div>
+</header>
+
 <main class="page">
 
-  <header class="hero">
+  <section class="hero">
     <h1>张必哲</h1>
     <p class="role">前端工程师</p>
+    <p class="lede">用简单可靠的方案做 Web 产品，关注性能、可维护性和真实的使用体验。</p>
     <ul class="contact">
       <li><a href="mailto:2656559942@qq.com">2656559942@qq.com</a></li>
       <li><a href="https://github.com/bizhezhang" target="_blank" rel="noopener noreferrer">github.com/bizhezhang</a></li>
       <li>上海</li>
     </ul>
-  </header>
-
-  <section>
-    <h2>个人简介</h2>
-    <p>XX 年 Web 开发经验，主要方向是前端工程化与交互实现。习惯把模糊的需求拆解成可交付的方案，关注性能、可维护性和最终的使用体验。</p>
-  </section>
-
-  <section>
-    <h2>技能</h2>
-    <div class="skill-group">
-      <span class="skill-label">语言</span>
-      <ul class="chips">
-        <li>TypeScript</li>
-        <li>JavaScript</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <span class="skill-label">框架</span>
-      <ul class="chips">
-        <li>React</li>
-        <li>Vue</li>
-        <li>Next.js</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <span class="skill-label">工程</span>
-      <ul class="chips">
-        <li>Vite</li>
-        <li>Webpack</li>
-        <li>Git</li>
-        <li>GitHub Actions</li>
-      </ul>
+    <div class="actions">
+      <a class="btn btn-primary" href="/projects/">看项目</a>
+      <a class="btn" href="/resume/">简历</a>
     </div>
   </section>
 
-  <section>
-    <h2>工作经历</h2>
-
-    <article class="item">
-      <p class="period">2023.07 — 至今</p>
-      <div>
-        <h3>前端工程师</h3>
-        <p class="org">XX 科技有限公司</p>
-        <ul>
-          <li>负责核心业务模块的开发与维护，主导一次页面性能优化，首屏时间下降 XX%。</li>
-          <li>参与组件库建设，沉淀 XX 个通用组件，覆盖 X 条业务线。</li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="item">
-      <p class="period">2021.07 — 2023.06</p>
-      <div>
-        <h3>前端开发</h3>
-        <p class="org">XX 网络科技有限公司</p>
-        <ul>
-          <li>参与 XX 系统从 0 到 1 的搭建，负责前端架构与接口联调。</li>
-          <li>推动构建流程改造，打包耗时从 XX 分钟降到 XX 分钟。</li>
-        </ul>
-      </div>
-    </article>
-  </section>
-
-  <section>
-    <h2>项目经历</h2>
-
-    <article class="item">
-      <p class="period">2026.10 — 至今</p>
-      <div>
+  <section class="block">
+    <div class="block-head">
+      <h2>精选项目</h2>
+      <a href="/projects/">全部 →</a>
+    </div>
+    <div class="cards">
+      <a class="card" href="/projects/personal-site.html">
         <h3>个人网站</h3>
-        <p class="org">原生 HTML / CSS · GitHub Pages</p>
-        <ul>
-          <li>手写响应式页面，适配移动端与打印样式，无任何运行时依赖。</li>
-          <li>通过 GitHub Actions / Pages 自动发布。</li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="item">
-      <p class="period">20XX.XX — 20XX.XX</p>
-      <div>
+        <p>手写 HTML / CSS 的静态站点，无构建、无 JS，部署在 GitHub Pages。</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub Pages</span></div>
+      </a>
+      <a class="card" href="/projects/">
         <h3>XX 项目</h3>
-        <p class="org">技术栈：XX</p>
-        <ul>
-          <li>一句话说明项目解决的问题。</li>
-          <li>一句话说明你的角色和可量化的结果。</li>
-        </ul>
-      </div>
-    </article>
+        <p>一句话说明这个项目解决了什么问题，以及你的角色。</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span></div>
+      </a>
+      <a class="card" href="/projects/">
+        <h3>XX 项目</h3>
+        <p>一句话说明这个项目的结果，尽量带上可量化的指标。</p>
+        <div class="tags"><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div>
+      </a>
+    </div>
   </section>
 
-  <section>
-    <h2>教育背景</h2>
-    <article class="item">
-      <p class="period">20XX.09 — 20XX.06</p>
-      <div>
-        <h3>XX 大学</h3>
-        <p class="org">计算机科学与技术 · 本科</p>
-      </div>
-    </article>
+  <section class="block">
+    <div class="block-head">
+      <h2>最近文章</h2>
+      <a href="/blog/">全部 →</a>
+    </div>
+    <ul class="post-list">
+      <li>
+        <time datetime="2026-10-18">2026 年 10 月 18 日</time>
+        <h3><a href="/blog/static-site-on-github-pages.html">用纯静态 HTML 在 GitHub Pages 上搭个人站</a></h3>
+        <p>不引入框架和构建流程，几个文件跑通一个站点。</p>
+      </li>
+      <li>
+        <time datetime="2026-10-17">2026 年 10 月 17 日</time>
+        <h3><a href="/blog/css-without-framework.html">手写 CSS 的四个决定</a></h3>
+        <p>自定义属性、深色模式、打印样式，以及为什么一行 JS 都不写。</p>
+      </li>
+    </ul>
   </section>
-
-  <footer>
-    最后更新：2026 年 10 月
-  </footer>
 
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 张必哲</span>
+    <span>
+      <a href="mailto:2656559942@qq.com">邮箱</a> ·
+      <a href="https://github.com/bizhezhang">GitHub</a> ·
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
