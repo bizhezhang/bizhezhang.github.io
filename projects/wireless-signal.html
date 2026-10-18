@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>无线信号检测与识别 · 张弼哲</title>
+  <meta name="description" content="软硬件一体的无线信号检测系统：LSTM 辐射源识别、CNN 协议识别与 YOLOv5 目标检测。">
+  <link rel="canonical" href="https://bizhezhang.github.io/projects/wireless-signal.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="张弼哲">
+  <meta property="og:title" content="无线信号检测与识别 · 张弼哲">
+  <meta property="og:description" content="软硬件一体的无线信号检测系统：LSTM 辐射源识别、CNN 协议识别与 YOLOv5 目标检测。">
+  <meta property="og:url" content="https://bizhezhang.github.io/projects/wireless-signal.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E张%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">张弼哲</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="/projects/" aria-current="page">项目</a>
+      <a href="/blog/">文章</a>
+      <a href="/about/">关于</a>
+      <a href="/resume/">简历</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page article">
+
+  <h1>无线信号检测与识别</h1>
+  <p class="meta">2023.01 — 2024.08 · 科研项目 · 算法与系统集成 · 主研</p>
+
+  <h2>问题</h2>
+  <p>无线信号的分析通常依赖人工：先采集，再看频谱，再凭经验判断设备类型和协议。这个过程慢、依赖个人经验，也很难在批量数据上复用。</p>
+
+  <h2>方案</h2>
+  <p>做一套软硬件一体的检测系统，把采集设备和多种识别算法集成到同一个流程里：</p>
+  <ul>
+    <li><strong>辐射源识别</strong>：用 LSTM 处理信号的时序特征，判断信号来自哪一类设备</li>
+    <li><strong>协议识别</strong>：用 CNN 从信号的时频表示中识别无线协议类型</li>
+    <li><strong>目标检测</strong>：用 YOLOv5 定位画面中的目标区域，把检测结果交给后续识别</li>
+  </ul>
+
+  <h2>难点</h2>
+  <p>三类任务的输入形态不一样——时序、时频图、图像，要在同一套系统里统一调度，并且保证每一段的预处理和模型输入严格对应。工程上的主要工作量在于数据管线和系统集成，而不是单个模型的结构。</p>
+
+  <h2>结果</h2>
+  <ul>
+    <li>LSTM 辐射源识别准确率 92% 以上</li>
+    <li>CNN 协议识别准确率 92% 以上</li>
+    <li>YOLOv5 目标检出率 90% 以上</li>
+  </ul>
+
+  <h2>复盘</h2>
+  <p>数据采集和标注的成本远高于训练本身。如果重做，会优先搭一套半自动的标注流程，并在早期就把评测集固定下来——否则不同批次的数据之间没法比较。</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 张弼哲</span>
+    <span>
+      <a href="mailto:zhangbizhea@163.com">邮箱</a> ·
+      <a href="https://github.com/bizhezhang">GitHub</a> ·
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

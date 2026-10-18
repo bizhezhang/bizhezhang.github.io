@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>项目 · 张弼哲</title>
-  <meta name="description" content="张弼哲的项目：个人网站与其它作品。">
+  <meta name="description" content="张弼哲的项目：信号检测与识别、目标检测、后端系统与这个网站。">
   <link rel="canonical" href="https://bizhezhang.github.io/projects/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="张弼哲">
   <meta property="og:title" content="项目 · 张弼哲">
-  <meta property="og:description" content="张弼哲的项目：个人网站与其它作品。">
+  <meta property="og:description" content="张弼哲的项目：信号检测与识别、目标检测、后端系统与这个网站。">
   <meta property="og:url" content="https://bizhezhang.github.io/projects/">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E张%3C/text%3E%3C/svg%3E">
@@ -34,31 +34,36 @@
 
   <header class="hero">
     <h1>项目</h1>
-    <p class="lede">做过的东西，以及每个项目里做过的取舍。每个项目都尽量写清楚问题、方案和结果。</p>
+    <p class="lede">做过的项目，以及每个项目里做过的取舍。每个详情页都按问题、方案、难点、结果、复盘来写。</p>
   </header>
 
   <section class="block">
     <div class="cards">
+      <a class="card" href="/projects/signal-detection.html">
+        <h3>信号目标检测与开集识别</h3>
+        <p>YOLOv8 检测 + 拒识机制，识别 10 类以上信号并拒绝未知类型。</p>
+        <div class="tags"><span class="tag">YOLOv8</span><span class="tag">PyQt</span><span class="tag">开集识别</span></div>
+      </a>
+      <a class="card" href="/projects/wireless-signal.html">
+        <h3>无线信号检测与识别</h3>
+        <p>软硬件一体的检测系统，LSTM / CNN / YOLOv5 三条算法线集成。</p>
+        <div class="tags"><span class="tag">LSTM</span><span class="tag">CNN</span><span class="tag">Python</span></div>
+      </a>
+      <a class="card" href="/projects/order-system.html">
+        <h3>订单管理系统</h3>
+        <p>SSM + SpringBoot 的分层实现，课程项目，担任组长。</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">SpringBoot</span><span class="tag">MySQL</span></div>
+      </a>
       <a class="card" href="/projects/personal-site.html">
         <h3>个人网站</h3>
         <p>手写 HTML / CSS 的静态站点，无构建、无 JS，部署在 GitHub Pages。</p>
         <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub Pages</span></div>
       </a>
-      <div class="card">
-        <h3>XX 项目</h3>
-        <p>一句话说明这个项目解决了什么问题，以及你的角色。</p>
-        <div class="tags"><span class="tag">待补充</span></div>
-      </div>
-      <div class="card">
-        <h3>XX 项目</h3>
-        <p>一句话说明项目的结果，尽量带上可量化的指标。</p>
-        <div class="tags"><span class="tag">待补充</span></div>
-      </div>
     </div>
   </section>
 
   <section class="block">
-    <p class="note">更多代码在 <a href="https://github.com/bizhezhang">GitHub</a>。每个项目详情页包含：问题、方案、难点、结果、复盘。</p>
+    <p class="note">更多代码在 <a href="https://github.com/bizhezhang">GitHub</a>。部分科研项目的细节做了脱敏处理，如需了解可以邮件联系。</p>
   </section>
 
 </main>
@@ -67,7 +72,7 @@
   <div class="wrap">
     <span>© 2026 张弼哲</span>
     <span>
-      <a href="mailto:2656559942@qq.com">邮箱</a> ·
+      <a href="mailto:zhangbizhea@163.com">邮箱</a> ·
       <a href="https://github.com/bizhezhang">GitHub</a> ·
       <a href="/feed.xml">RSS</a>
     </span>

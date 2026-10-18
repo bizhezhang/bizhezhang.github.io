@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>订单管理系统 · 张弼哲</title>
+  <meta name="description" content="SSM + SpringBoot 的订单管理系统课程项目：分层设计、核心业务与团队协作。">
+  <link rel="canonical" href="https://bizhezhang.github.io/projects/order-system.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="张弼哲">
+  <meta property="og:title" content="订单管理系统 · 张弼哲">
+  <meta property="og:description" content="SSM + SpringBoot 的订单管理系统课程项目：分层设计、核心业务与团队协作。">
+  <meta property="og:url" content="https://bizhezhang.github.io/projects/order-system.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E张%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">张弼哲</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="/projects/" aria-current="page">项目</a>
+      <a href="/blog/">文章</a>
+      <a href="/about/">关于</a>
+      <a href="/resume/">简历</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page article">
+
+  <h1>订单管理系统</h1>
+  <p class="meta">2021.06 — 2021.07 · 课程项目 · 组长</p>
+
+  <h2>问题</h2>
+  <p>课程作业要求实现一套订单管理系统，覆盖下单、查询和后台管理。真正想练的是分层架构——把 controller、service、dao 的边界划清楚，而不是把所有逻辑堆在 servlet 里。</p>
+
+  <h2>方案</h2>
+  <ul>
+    <li>技术栈：SSM（Spring + SpringMVC + MyBatis）+ SpringBoot</li>
+    <li>我担任组长，负责项目管理、分层功能分析和核心业务逻辑的编写</li>
+    <li>按 controller / service / dao 三层拆分为独立模块，接口先定、实现后填</li>
+  </ul>
+
+  <h2>难点</h2>
+  <p>团队协作的时间成本比写代码高：三个人对同一个功能的边界理解不一致，返工就会发生。最后的做法是先把接口和数据结构写在一张表里，确认之后再各自实现。</p>
+
+  <h2>结果</h2>
+  <p>按时完成课程要求的功能，团队分工与联调流程跑通。</p>
+
+  <h2>复盘</h2>
+  <p>当时几乎没有写测试，出问题只能靠手工点。现在回头看，哪怕只给 service 层补几个单元测试，联调阶段也会快很多。</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 张弼哲</span>
+    <span>
+      <a href="mailto:zhangbizhea@163.com">邮箱</a> ·
+      <a href="https://github.com/bizhezhang">GitHub</a> ·
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
