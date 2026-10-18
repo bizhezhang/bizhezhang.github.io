@@ -1,0 +1,276 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+  --chip-bg: #f3f4f6;
+  --max: 780px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #e8e8e8;
+    --muted: #9aa3af;
+    --line: #262a33;
+    --accent: #7aa2ff;
+    --chip-bg: #1b1f27;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+a:hover {
+  border-bottom-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* 头部 */
+.hero {
+  margin-bottom: 52px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.role {
+  margin: 10px 0 0;
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.contact {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  padding: 0;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+/* 区块 */
+section {
+  margin-top: 46px;
+}
+
+section h2 {
+  margin: 0 0 20px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+section > p {
+  margin: 0;
+}
+
+/* 技能 */
+.skill-group {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-label {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.chips li {
+  background: var(--chip-bg);
+  border-radius: 999px;
+  padding: 3px 13px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--fg);
+}
+
+/* 条目 */
+.item {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 4px 28px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.period {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.9;
+}
+
+.item h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.item .org {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+.item ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.item li {
+  margin: 5px 0;
+}
+
+.item li::marker {
+  color: var(--muted);
+}
+
+/* 页脚 */
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+/* 移动端 */
+@media (max-width: 640px) {
+  .page {
+    padding: 40px 18px 60px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .period {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  section {
+    margin-top: 38px;
+  }
+}
+
+/* 打印 / 导出 PDF */
+@media print {
+  :root {
+    --bg: #ffffff;
+    --fg: #000000;
+    --muted: #444444;
+    --line: #cccccc;
+    --accent: #000000;
+    --chip-bg: #f2f2f2;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  body {
+    font-size: 11.5pt;
+    line-height: 1.6;
+  }
+
+  .hero {
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: 26pt;
+  }
+
+  section {
+    margin-top: 22px;
+  }
+
+  .item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+  }
+}
