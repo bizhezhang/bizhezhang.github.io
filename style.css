@@ -670,3 +670,187 @@ footer {
     margin-top: 42px;
   }
 }
+
+/* ===== 顶部照片轮播 ===== */
+.carousel {
+  position: relative;
+  background: var(--chip-bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.carousel-track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  height: clamp(280px, 44vh, 500px);
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-slide {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  overflow: hidden;
+}
+
+.carousel-slide::before {
+  content: "";
+  position: absolute;
+  inset: -48px;
+  background: var(--bg) center / cover no-repeat;
+  filter: blur(32px) brightness(0.45) saturate(1.15);
+  z-index: 0;
+}
+
+.carousel-slide img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-slide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-cap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  max-width: 70%;
+  padding: 24px 24px 20px;
+  padding-left: max(24px, calc((100vw - var(--max)) / 2));
+  color: #fff;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s ease;
+}
+
+.carousel.is-ready .carousel-btn {
+  display: flex;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.carousel-prev {
+  left: 16px;
+}
+
+.carousel-next {
+  right: 16px;
+}
+
+.carousel-dots {
+  position: absolute;
+  right: max(24px, calc((100vw - var(--max)) / 2));
+  bottom: 20px;
+  display: none;
+  gap: 8px;
+}
+
+.carousel.is-ready .carousel-dots {
+  display: flex;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.carousel-dots button[aria-current="true"] {
+  width: 22px;
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .carousel-track {
+    height: 300px;
+  }
+
+  .carousel-cap {
+    max-width: 74%;
+    padding-top: 20px;
+    padding-right: 18px;
+    font-size: 12.5px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .carousel-prev {
+    left: 8px;
+  }
+
+  .carousel-next {
+    right: 8px;
+  }
+
+  .carousel-dots {
+    right: 18px;
+    bottom: 16px;
+  }
+}
+
+@media print {
+  .carousel {
+    display: none;
+  }
+}

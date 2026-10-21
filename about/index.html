@@ -15,6 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E张%3C/text%3E%3C/svg%3E">
   <link rel="alternate" type="application/rss+xml" title="张弼哲" href="/feed.xml">
   <link rel="stylesheet" href="/style.css">
+  <script src="/assets/carousel.js" defer></script>
 </head>
 <body>
 
@@ -29,6 +30,47 @@
     </nav>
   </div>
 </header>
+
+<section class="carousel" data-carousel aria-roledescription="carousel" aria-label="生活照片">
+  <ul class="carousel-track">
+    <li class="carousel-slide" style="--bg:url('/assets/photos/beijing-temple.webp')" aria-roledescription="slide" aria-label="1 / 8">
+      <img src="/assets/photos/beijing-temple.webp" alt="天坛祈年殿前的自拍" width="1050" height="1400">
+      <span class="carousel-cap">2018 年 9 月 · 北京 · 天坛</span>
+    </li>
+    <li class="carousel-slide" style="--bg:url('/assets/photos/beijing-tiananmen.webp')" aria-roledescription="slide" aria-label="2 / 8">
+      <img src="/assets/photos/beijing-tiananmen.webp" alt="天安门前的自拍" width="1050" height="1400" loading="lazy">
+      <span class="carousel-cap">2018 年 9 月 · 北京 · 天安门</span>
+    </li>
+    <li class="carousel-slide" style="--bg:url('/assets/photos/zigong-2025.webp')" aria-roledescription="slide" aria-label="3 / 8">
+      <img src="/assets/photos/zigong-2025.webp" alt="四人在草坪前的合影" width="1400" height="1050" loading="lazy">
+      <span class="carousel-cap">2025 年 5 月 · 自贡</span>
+    </li>
+    <li class="carousel-slide" style="--bg:url('/assets/photos/mountain-selfie.webp')" aria-roledescription="slide" aria-label="4 / 8">
+      <img src="/assets/photos/mountain-selfie.webp" alt="山脚下的自拍" width="1050" height="1400" loading="lazy">
+      <span class="carousel-cap">2025 年 5 月 · 山脚</span>
+    </li>
+    <li class="carousel-slide" style="--bg:url('/assets/photos/mountain-portrait.webp')" aria-roledescription="slide" aria-label="5 / 8">
+      <img src="/assets/photos/mountain-portrait.webp" alt="林间的留影" width="1050" height="1400" loading="lazy">
+      <span class="carousel-cap">2025 年 5 月 · 林间</span>
+    </li>
+    <li class="carousel-slide" style="--bg:url('/assets/photos/snow-mountain.webp')" aria-roledescription="slide" aria-label="6 / 8">
+      <img src="/assets/photos/snow-mountain.webp" alt="雪山前的全身照" width="1050" height="1400" loading="lazy">
+      <span class="carousel-cap">2025 年 5 月 · 雪线</span>
+    </li>
+    <li class="carousel-slide" style="--bg:url('/assets/photos/sky-deck.webp')" aria-roledescription="slide" aria-label="7 / 8">
+      <img src="/assets/photos/sky-deck.webp" alt="木栈道与雪山" width="1050" height="1400" loading="lazy">
+      <span class="carousel-cap">2025 年 5 月 · 雪山前</span>
+    </li>
+    <li class="carousel-slide" style="--bg:url('/assets/photos/waterfall.webp')" aria-roledescription="slide" aria-label="8 / 8">
+      <img src="/assets/photos/waterfall.webp" alt="河谷与瀑布前的自拍" width="1400" height="1050" loading="lazy">
+      <span class="carousel-cap">2025 年 5 月 · 瀑布</span>
+    </li>
+  </ul>
+
+  <button class="carousel-btn carousel-prev" type="button" aria-label="上一张">‹</button>
+  <button class="carousel-btn carousel-next" type="button" aria-label="下一张">›</button>
+  <div class="carousel-dots" aria-label="选择照片"></div>
+</section>
 
 <main class="page">
 
@@ -46,7 +88,7 @@
 
   <section>
     <h2>生活</h2>
-    <p>黑龙江人，2018 年到成都读书，之后一直留在这座城市。照片是这些年的几个片段：2018 年的北京，2025 年春天的自贡和雪山。</p>
+    <p>黑龙江人，2018 年到成都读书，之后一直留在这座城市。下面这些是这些年的几个节点，照片在上面。</p>
 
     <article class="item">
       <p class="period">2000.11</p>
@@ -103,57 +145,6 @@
         <p class="org">电子信息 · 西南交通大学</p>
       </div>
     </article>
-
-    <ul class="gallery">
-      <li>
-        <figure>
-          <a href="/assets/photos/beijing-temple.webp"><img src="/assets/photos/beijing-temple.webp" alt="天坛祈年殿前的自拍" width="1050" height="1400" loading="lazy"></a>
-          <figcaption>2018 年 9 月 · 北京 · 天坛</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <a href="/assets/photos/beijing-tiananmen.webp"><img src="/assets/photos/beijing-tiananmen.webp" alt="天安门前的自拍" width="1050" height="1400" loading="lazy"></a>
-          <figcaption>2018 年 9 月 · 北京 · 天安门</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <a href="/assets/photos/zigong-2025.webp"><img src="/assets/photos/zigong-2025.webp" alt="四人在草坪前的合影" width="1400" height="1050" loading="lazy"></a>
-          <figcaption>2025 年 5 月 · 自贡</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <a href="/assets/photos/mountain-selfie.webp"><img src="/assets/photos/mountain-selfie.webp" alt="山脚下的自拍" width="1050" height="1400" loading="lazy"></a>
-          <figcaption>2025 年 5 月 · 山脚</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <a href="/assets/photos/mountain-portrait.webp"><img src="/assets/photos/mountain-portrait.webp" alt="林间的留影" width="1050" height="1400" loading="lazy"></a>
-          <figcaption>2025 年 5 月 · 林间</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <a href="/assets/photos/snow-mountain.webp"><img src="/assets/photos/snow-mountain.webp" alt="雪山前的全身照" width="1050" height="1400" loading="lazy"></a>
-          <figcaption>2025 年 5 月 · 雪线</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <a href="/assets/photos/sky-deck.webp"><img src="/assets/photos/sky-deck.webp" alt="木栈道与雪山" width="1050" height="1400" loading="lazy"></a>
-          <figcaption>2025 年 5 月 · 雪山前</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <a href="/assets/photos/waterfall.webp"><img src="/assets/photos/waterfall.webp" alt="河谷与瀑布前的自拍" width="1400" height="1050" loading="lazy"></a>
-          <figcaption>2025 年 5 月 · 瀑布</figcaption>
-        </figure>
-      </li>
-    </ul>
   </section>
 
   <section>
