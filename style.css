@@ -671,11 +671,15 @@ footer {
   }
 }
 
-/* ===== 顶部照片轮播 ===== */
+/* ===== 关于页照片轮播 ===== */
 .carousel {
   position: relative;
+  max-width: calc(var(--max) - 48px);
+  margin: 36px auto 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
   background: var(--chip-bg);
-  border-bottom: 1px solid var(--line);
 }
 
 .carousel-track {
@@ -687,7 +691,7 @@ footer {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  height: clamp(280px, 44vh, 500px);
+  aspect-ratio: 16 / 9;
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -705,9 +709,9 @@ footer {
 .carousel-slide::before {
   content: "";
   position: absolute;
-  inset: -48px;
+  inset: -40px;
   background: var(--bg) center / cover no-repeat;
-  filter: blur(32px) brightness(0.45) saturate(1.15);
+  filter: blur(28px) brightness(0.45) saturate(1.1);
   z-index: 0;
 }
 
@@ -726,7 +730,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 45%;
+  height: 42%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
   z-index: 2;
   pointer-events: none;
@@ -737,9 +741,8 @@ footer {
   left: 0;
   bottom: 0;
   z-index: 3;
-  max-width: 70%;
-  padding: 24px 24px 20px;
-  padding-left: max(24px, calc((100vw - var(--max)) / 2));
+  max-width: 72%;
+  padding: 20px 24px 18px;
   color: #fff;
   font-size: 13.5px;
   letter-spacing: 0.02em;
@@ -750,17 +753,18 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  z-index: 4;
+  width: 40px;
+  height: 40px;
   display: none;
   align-items: center;
   justify-content: center;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.42);
   color: #fff;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1;
   cursor: pointer;
   backdrop-filter: blur(6px);
@@ -772,7 +776,7 @@ footer {
 }
 
 .carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.66);
 }
 
 .carousel-btn:focus-visible {
@@ -781,17 +785,18 @@ footer {
 }
 
 .carousel-prev {
-  left: 16px;
+  left: 12px;
 }
 
 .carousel-next {
-  right: 16px;
+  right: 12px;
 }
 
 .carousel-dots {
   position: absolute;
-  right: max(24px, calc((100vw - var(--max)) / 2));
-  bottom: 20px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 4;
   display: none;
   gap: 8px;
 }
@@ -806,7 +811,7 @@ footer {
   padding: 0;
   border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.55);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
   cursor: pointer;
   transition: width 0.2s ease, background 0.2s ease;
@@ -818,21 +823,26 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .carousel {
+    max-width: none;
+    margin: 20px 18px 0;
+    border-radius: 14px;
+  }
+
   .carousel-track {
-    height: 300px;
+    aspect-ratio: 4 / 3;
   }
 
   .carousel-cap {
-    max-width: 74%;
-    padding-top: 20px;
-    padding-right: 18px;
+    max-width: 75%;
+    padding: 18px 18px 16px;
     font-size: 12.5px;
   }
 
   .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 17px;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
   }
 
   .carousel-prev {
@@ -844,8 +854,8 @@ footer {
   }
 
   .carousel-dots {
-    right: 18px;
-    bottom: 16px;
+    right: 14px;
+    bottom: 12px;
   }
 }
 
